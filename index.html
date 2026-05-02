@@ -3,24 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUFFIN & CO — AI Automation Consultancy</title>
+    <title>Muffin & Co — AI Automation for Clinics &amp; Service Businesses</title>
+    <meta name="description" content="Muffin & Co builds AI automation systems for aesthetic clinics, wellness studios, and appointment-led service businesses. Less admin, more time on clients.">
+    <meta property="og:title" content="Muffin & Co — AI Automation for Clinics &amp; Service Businesses">
+    <meta property="og:description" content="We build AI systems that handle the admin — so premium service businesses can focus on what they do best.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://muffinandco.xyz">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cyan: #00f0ff;
-            --amber: #ffaa00;
-            --green: #00ff88;
-            --dark: #0a0a0a;
-            --darker: #050505;
-            --gray: #1a1a1a;
-            --gray-light: #2a2a2a;
-            --text: #e0e0e0;
-            --text-muted: #888;
+            --ivory:        #FAF7F2;
+            --ivory-deep:   #F2EDE5;
+            --espresso:     #1C1410;
+            --cocoa:        #4A3728;
+            --copper:       #B8875A;
+            --copper-light: #D4A878;
+            --warm-white:   #FFFDF9;
+            --text-body:    #3D2E26;
+            --text-muted:   #7A6558;
+            --border:       rgba(184, 135, 90, 0.2);
+            --border-subtle: rgba(184, 135, 90, 0.12);
         }
 
-        * {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -31,412 +38,518 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--darker);
-            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--ivory);
+            color: var(--espresso);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* NAV */
+        /* ─── NAV ─── */
+
         nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 100;
-            padding: 1.5rem 3rem;
+            padding: 1.5rem 4rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            backdrop-filter: blur(20px);
-            background: rgba(5, 5, 5, 0.7);
-            border-bottom: 1px solid rgba(255,255,255,0.03);
+            background: rgba(250, 247, 242, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-subtle);
         }
 
         .nav-brand {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--cyan);
-            text-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            font-size: 1.3rem;
+            letter-spacing: 0.03em;
+            color: var(--espresso);
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
+            font-size: 0.78rem;
+            font-weight: 400;
+            letter-spacing: 0.07em;
             text-transform: uppercase;
             color: var(--text-muted);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.2s;
         }
 
         .nav-links a:hover {
-            color: var(--cyan);
+            color: var(--espresso);
         }
 
-        /* HERO */
+        .nav-links .nav-contact {
+            color: var(--copper);
+            font-weight: 500;
+        }
+
+        .nav-links .nav-contact:hover {
+            color: var(--cocoa);
+        }
+
+        /* ─── HERO ─── */
+
         .hero {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            padding: 8rem 3rem 4rem;
+            justify-content: flex-end;
+            padding: 0 4rem 7rem;
+            background-color: var(--ivory);
             position: relative;
-            background:
-                radial-gradient(ellipse at 20% 50%, rgba(0, 240, 255, 0.04) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(255, 170, 0, 0.03) 0%, transparent 50%),
-                var(--darker);
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-            background-size: 60px 60px;
-            pointer-events: none;
-        }
-
-        .hero-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            letter-spacing: 0.3em;
+        .hero-eyebrow {
+            font-size: 0.72rem;
+            font-weight: 400;
+            letter-spacing: 0.22em;
             text-transform: uppercase;
-            color: var(--amber);
+            color: var(--copper);
             margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeUp 0.8s ease forwards 0.2s;
+            opacity: 1;
+            animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.3s;
         }
 
         .hero-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(3.5rem, 10vw, 9rem);
-            font-weight: 700;
-            line-height: 0.95;
-            letter-spacing: -0.03em;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeUp 0.8s ease forwards 0.4s;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.8rem, 9vw, 9rem);
+            font-weight: 300;
+            line-height: 1.0;
+            letter-spacing: -0.02em;
+            color: var(--espresso);
+            margin-bottom: 3rem;
+            text-wrap: balance;
+            opacity: 1;
+            animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.5s;
         }
 
-        .hero-title .gradient {
-            background: linear-gradient(135deg, var(--cyan) 0%, var(--amber) 50%, var(--green) 100%);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 4s ease infinite;
+        .hero-title em {
+            font-style: italic;
+            color: var(--copper);
         }
 
-        .hero-title .outline {
-            -webkit-text-fill-color: transparent;
-            -webkit-text-stroke: 1.5px var(--text-muted);
+        .hero-lower {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 4rem;
+            opacity: 1;
+            animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.7s;
         }
 
         .hero-sub {
-            font-size: 1.25rem;
+            font-size: 1.05rem;
             font-weight: 300;
-            color: var(--text-muted);
-            max-width: 500px;
-            line-height: 1.7;
-            margin-bottom: 3rem;
-            opacity: 0;
-            animation: fadeUp 0.8s ease forwards 0.6s;
+            line-height: 1.8;
+            color: var(--text-body);
+            max-width: 44ch;
+            text-wrap: pretty;
         }
 
         .hero-cta {
             display: inline-flex;
             align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 2.5rem;
-            background: transparent;
-            border: 1px solid var(--cyan);
-            color: var(--cyan);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            letter-spacing: 0.1em;
+            gap: 0.6rem;
+            padding: 0.9rem 2.25rem;
+            background: var(--espresso);
+            color: var(--ivory);
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.09em;
             text-transform: uppercase;
             text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            opacity: 0;
-            animation: fadeUp 0.8s ease forwards 0.8s;
+            transition: background 0.25s, transform 0.2s;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .hero-cta:hover {
-            background: var(--cyan);
-            color: var(--darker);
-            box-shadow: 0 0 40px rgba(0, 240, 255, 0.2);
+            background: var(--cocoa);
+            transform: translateY(-2px);
         }
 
         .hero-cta .arrow {
-            transition: transform 0.3s;
+            display: inline-block;
+            transition: transform 0.2s;
         }
 
         .hero-cta:hover .arrow {
-            transform: translateX(4px);
+            transform: translateX(3px);
         }
 
-        /* SECTIONS */
+        .hero-rule {
+            position: absolute;
+            bottom: 0;
+            left: 4rem;
+            right: 4rem;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ─── SHARED SECTION ─── */
+
         section {
-            padding: 6rem 3rem;
-            position: relative;
+            padding: 7rem 4rem;
         }
 
         .section-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            letter-spacing: 0.3em;
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.24em;
             text-transform: uppercase;
-            color: var(--amber);
-            margin-bottom: 1rem;
+            color: var(--copper);
+            margin-bottom: 1.25rem;
         }
 
         .section-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 3rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+            font-weight: 300;
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            color: var(--espresso);
+            text-wrap: balance;
         }
 
-        /* SERVICES */
+        .section-title em {
+            font-style: italic;
+            color: var(--copper);
+        }
+
+        /* ─── SERVICES ─── */
+
         .services {
-            background: var(--dark);
-            border-top: 1px solid var(--gray);
-            border-bottom: 1px solid var(--gray);
+            background: var(--ivory-deep);
+        }
+
+        .services-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: end;
+            margin-bottom: 5rem;
+        }
+
+        .services-intro {
+            font-size: 1.0rem;
+            font-weight: 300;
+            line-height: 1.85;
+            color: var(--text-body);
+            text-wrap: pretty;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1px;
-            background: var(--gray);
-            margin-top: 3rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
         }
 
         .service-card {
-            background: var(--dark);
-            padding: 3rem;
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--cyan), transparent);
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
+            padding: 2.75rem 2.25rem;
+            background: var(--warm-white);
+            border-top: 2px solid var(--copper);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .service-card:hover {
-            background: var(--gray);
-        }
-
-        .service-number {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 4rem;
-            font-weight: 700;
-            color: var(--gray-light);
-            line-height: 1;
-            margin-bottom: 1.5rem;
-            transition: color 0.4s;
-        }
-
-        .service-card:hover .service-number {
-            color: var(--cyan);
-            text-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+            transform: translateY(-4px);
         }
 
         .service-name {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.55rem;
+            font-weight: 400;
+            line-height: 1.25;
+            color: var(--espresso);
+            margin-bottom: 1.25rem;
         }
 
         .service-desc {
-            font-size: 0.95rem;
+            font-size: 0.88rem;
+            font-weight: 300;
+            line-height: 1.85;
             color: var(--text-muted);
-            line-height: 1.7;
+            text-wrap: pretty;
         }
 
-        /* STORY */
+        /* ─── METHOD ─── */
+
+        .method {
+            background: var(--ivory);
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: 5fr 4fr;
+            gap: 8rem;
+            align-items: start;
+            margin-top: 4rem;
+        }
+
+        .pull-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.7rem, 2.8vw, 2.6rem);
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.45;
+            color: var(--espresso);
+            padding-left: 2.25rem;
+            border-left: 2px solid var(--copper);
+            text-wrap: pretty;
+        }
+
+        .method-points {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .method-point {
+            padding: 1.75rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .method-point:last-child {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .method-point h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--espresso);
+            margin-bottom: 0.6rem;
+            line-height: 1.3;
+        }
+
+        .method-point p {
+            font-size: 0.875rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--text-muted);
+            text-wrap: pretty;
+        }
+
+        /* ─── STORY ─── */
+
         .story {
-            background: var(--darker);
+            background: var(--espresso);
+        }
+
+        .story .section-label {
+            color: var(--copper-light);
+        }
+
+        .story .section-title {
+            color: var(--ivory);
         }
 
         .story-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-top: 2rem;
+            grid-template-columns: 5fr 4fr;
+            gap: 8rem;
+            align-items: start;
+            margin-top: 4rem;
         }
 
         .story-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-muted);
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.9;
+            color: rgba(250, 247, 242, 0.72);
+            text-wrap: pretty;
         }
 
         .story-text p {
             margin-bottom: 1.5rem;
         }
 
-        .pull-quote {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(1.5rem, 3vw, 2.2rem);
-            font-weight: 300;
-            line-height: 1.4;
-            color: var(--text);
-            border-left: 3px solid var(--cyan);
-            padding-left: 2rem;
-            position: relative;
+        .story-text p:last-child {
+            margin-bottom: 0;
         }
 
-        .pull-quote .highlight {
-            color: var(--cyan);
-            text-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+        .story-text strong {
+            color: var(--ivory);
+            font-weight: 400;
         }
 
-        /* PROCESS */
-        .process {
-            background: var(--dark);
-            border-top: 1px solid var(--gray);
-            border-bottom: 1px solid var(--gray);
+        .story-aside {
+            padding: 2.5rem;
+            border: 1px solid rgba(184, 135, 90, 0.28);
+            align-self: start;
         }
 
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-            counter-reset: step;
-        }
-
-        .step {
-            position: relative;
-            padding-top: 4rem;
-        }
-
-        .step::before {
-            content: counter(step, decimal-leading-zero);
-            counter-increment: step;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 5rem;
-            font-weight: 700;
-            color: var(--gray);
-            position: absolute;
-            top: 0;
-            left: 0;
-            line-height: 1;
-            transition: color 0.4s;
-        }
-
-        .step:hover::before {
-            color: var(--amber);
-            text-shadow: 0 0 30px rgba(255, 170, 0, 0.2);
-        }
-
-        .step h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-
-        .step p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        /* CONTACT */
-        .contact {
-            background: var(--darker);
-            text-align: center;
-            padding: 8rem 3rem;
-        }
-
-        .contact .section-title {
-            font-size: clamp(2.5rem, 6vw, 5rem);
+        .story-aside-label {
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--copper-light);
             margin-bottom: 1.5rem;
         }
 
-        .contact-sub {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            max-width: 500px;
-            margin: 0 auto 3rem;
-            line-height: 1.7;
+        .story-aside-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.55rem;
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.55;
+            color: var(--ivory);
         }
 
-        .contact-cta {
+        /* ─── PROCESS ─── */
+
+        .process {
+            background: var(--ivory-deep);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            margin-top: 4rem;
+            border: 1px solid var(--border);
+        }
+
+        .process-step {
+            padding: 2.75rem 2.25rem;
+            border-right: 1px solid var(--border);
+            transition: background 0.25s;
+        }
+
+        .process-step:last-child {
+            border-right: none;
+        }
+
+        .process-step:hover {
+            background: rgba(255, 253, 249, 0.6);
+        }
+
+        .step-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            color: var(--copper);
+            margin-bottom: 2.25rem;
+        }
+
+        .step-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem;
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--espresso);
+            margin-bottom: 1rem;
+        }
+
+        .step-desc {
+            font-size: 0.875rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--text-muted);
+            text-wrap: pretty;
+        }
+
+        /* ─── CONTACT ─── */
+
+        .contact {
+            background: var(--ivory);
+            text-align: center;
+            padding: 9rem 4rem;
+        }
+
+        .contact .section-title {
+            font-size: clamp(2.6rem, 5.5vw, 5.2rem);
+            margin: 1.5rem 0 2rem;
+        }
+
+        .contact-sub {
+            font-size: 1.0rem;
+            font-weight: 300;
+            line-height: 1.85;
+            color: var(--text-body);
+            max-width: 46ch;
+            margin: 0 auto 3rem;
+            text-wrap: pretty;
+        }
+
+        .contact-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.75rem;
-            padding: 1.25rem 3rem;
-            background: var(--cyan);
-            color: var(--darker);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            gap: 0.6rem;
+            padding: 1rem 2.75rem;
+            background: var(--espresso);
+            color: var(--ivory);
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.06em;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: background 0.25s, transform 0.2s;
         }
 
-        .contact-cta:hover {
-            box-shadow: 0 0 60px rgba(0, 240, 255, 0.3);
+        .contact-link:hover {
+            background: var(--copper);
             transform: translateY(-2px);
         }
 
-        /* FOOTER */
+        /* ─── FOOTER ─── */
+
         footer {
-            padding: 3rem;
-            border-top: 1px solid var(--gray);
+            padding: 2.5rem 4rem;
+            border-top: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-family: 'JetBrains Mono', monospace;
+            background: var(--ivory);
+        }
+
+        .footer-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--cocoa);
+        }
+
+        .footer-meta {
             font-size: 0.75rem;
+            font-weight: 300;
             color: var(--text-muted);
-            letter-spacing: 0.05em;
+            letter-spacing: 0.04em;
         }
 
-        footer a {
-            color: var(--cyan);
+        .footer-meta a {
+            color: var(--copper);
             text-decoration: none;
+            transition: color 0.2s;
         }
 
-        /* ANIMATIONS */
+        .footer-meta a:hover {
+            color: var(--espresso);
+        }
+
+        /* ─── ANIMATIONS ─── */
+
         @keyframes fadeUp {
             from {
-                opacity: 0;
-                transform: translateY(30px);
+                opacity: 1;
+                transform: translateY(22px);
             }
             to {
                 opacity: 1;
@@ -444,172 +557,231 @@
             }
         }
 
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
         .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .reveal.visible {
+        body.has-js .reveal {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* RESPONSIVE */
+        body.has-js .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ─── RESPONSIVE ─── */
+
+        @media (max-width: 1100px) {
+            nav { padding: 1.25rem 2.5rem; }
+
+            .hero { padding: 0 2.5rem 6rem; }
+            .hero-rule { left: 2.5rem; right: 2.5rem; }
+
+            section { padding: 6rem 2.5rem; }
+            .contact { padding: 8rem 2.5rem; }
+
+            .services-header { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
+            .services-grid { grid-template-columns: 1fr 1fr; }
+
+            .method-grid { grid-template-columns: 1fr; gap: 4rem; }
+
+            .story-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+            .story-aside { max-width: 28rem; }
+
+            .process-grid { grid-template-columns: 1fr 1fr; }
+            .process-step:nth-child(2) { border-right: none; }
+            .process-step:nth-child(3) { border-right: 1px solid var(--border); border-top: 1px solid var(--border); }
+            .process-step:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
+        }
+
         @media (max-width: 768px) {
-            nav {
-                padding: 1rem 1.5rem;
-            }
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
 
-            .nav-links {
-                display: none;
-            }
+            .hero { padding: 0 1.5rem 5rem; min-height: 100svh; }
+            .hero-rule { left: 1.5rem; right: 1.5rem; }
+            .hero-lower { flex-direction: column; align-items: flex-start; gap: 2rem; }
 
-            .hero, section {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-            }
+            section { padding: 5rem 1.5rem; }
+            .contact { padding: 7rem 1.5rem; }
 
-            .story-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
+            .services-grid { grid-template-columns: 1fr; }
 
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
+            .process-grid { grid-template-columns: 1fr; border: 1px solid var(--border); }
+            .process-step { border-right: none; border-top: 1px solid var(--border); }
+            .process-step:first-child { border-top: none; }
+            .process-step:nth-child(3) { border-right: none; }
 
-            footer {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
+            footer { padding: 2rem 1.5rem; flex-direction: column; gap: 0.75rem; text-align: center; }
         }
     </style>
 </head>
 <body>
+
+    <!-- NAV -->
     <nav>
-        <div class="nav-brand">🧁 Muffin & Co</div>
+        <a href="#" class="nav-brand">Muffin &amp; Co</a>
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
-            <li><a href="#story">Story</a></li>
             <li><a href="#process">Process</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#story">About</a></li>
+            <li><a href="mailto:hello@muffinandco.xyz" class="nav-contact">hello@muffinandco.xyz</a></li>
         </ul>
     </nav>
 
-    <section class="hero">
-        <div class="hero-label">AI Automation Consultancy</div>
+    <!-- HERO -->
+    <section class="hero" aria-label="Introduction">
+        <span class="hero-eyebrow">AI Automation · Premium Service Businesses</span>
         <h1 class="hero-title">
-            <span class="gradient">MUFFIN</span><br>
-            <span class="outline">& CO</span>
+            Less admin.<br>
+            More time on<br>
+            <em>what matters.</em>
         </h1>
-        <p class="hero-sub">We automate your business operations with AI. No fluff, no corporate speak — just results that compound.</p>
-        <a href="#contact" class="hero-cta">
-            Let's talk <span class="arrow">→</span>
-        </a>
+        <div class="hero-lower">
+            <p class="hero-sub">We build AI automation systems for aesthetic clinics, wellness studios, and appointment-led businesses — so your team spends less time on admin, and more time on clients.</p>
+            <a href="#contact" class="hero-cta">Start a conversation <span class="arrow">→</span></a>
+        </div>
+        <div class="hero-rule" aria-hidden="true"></div>
     </section>
 
+    <!-- SERVICES -->
     <section class="services" id="services">
-        <div class="reveal">
-            <div class="section-label">What we do</div>
-            <h2 class="section-title">Three ways we<br>transform your ops</h2>
+        <div class="services-header reveal">
+            <div>
+                <div class="section-label">What we do</div>
+                <h2 class="section-title">The admin that<br>runs <em>itself</em></h2>
+            </div>
+            <p class="services-intro">Booking confirmations. Appointment reminders. Post-treatment follow-ups. Intake workflows. The repetitive tasks that cost your practice hours every week — we automate them, carefully, so they still feel human.</p>
         </div>
         <div class="services-grid">
             <div class="service-card reveal">
-                <div class="service-number">01</div>
-                <h3 class="service-name">AI Automation Audits</h3>
-                <p class="service-desc">We map your workflows, find the bottlenecks, and identify every process that an AI can handle better, faster, and cheaper than manual work.</p>
+                <h3 class="service-name">Client Journey<br>Automation</h3>
+                <p class="service-desc">Booking confirmations, pre-appointment forms, aftercare sequences, and review requests — designed to feel personal, running without you.</p>
             </div>
             <div class="service-card reveal">
-                <div class="service-number">02</div>
-                <h3 class="service-name">Process Optimisation</h3>
-                <p class="service-desc">Streamline your operations with low-code automation. From invoicing to onboarding to customer follow-ups — we make it run itself.</p>
+                <h3 class="service-name">Operations &amp;<br>Scheduling</h3>
+                <p class="service-desc">Waitlist management, cancellation workflows, and staff coordination. We map your current process, then redesign it so it runs itself.</p>
             </div>
             <div class="service-card reveal">
-                <div class="service-number">03</div>
-                <h3 class="service-name">Custom AI Solutions</h3>
-                <p class="service-desc">Bespoke AI agents tailored to your business. Customer support, data analysis, content generation — whatever your operation needs.</p>
+                <h3 class="service-name">Custom AI<br>Solutions</h3>
+                <p class="service-desc">Bespoke tools built around your specific practice — from consultation prep to aftercare to client communication — built to your voice and standards.</p>
             </div>
         </div>
     </section>
 
+    <!-- METHOD -->
+    <section class="method" id="method">
+        <div class="reveal">
+            <div class="section-label">How we think</div>
+            <h2 class="section-title">Automation that feels<br><em>considered</em></h2>
+        </div>
+        <div class="method-grid">
+            <blockquote class="pull-quote reveal">
+                "Most automation advice is built for e-commerce. We understand the particular rhythm of a premium service business — where the client relationship is everything, and 'automated' cannot mean 'impersonal'."
+            </blockquote>
+            <div class="method-points reveal">
+                <div class="method-point">
+                    <h3>We start with your workflows, not with tools</h3>
+                    <p>Before recommending anything, we spend time understanding how your business actually operates — and where the friction truly lives.</p>
+                </div>
+                <div class="method-point">
+                    <h3>We write automations that sound like you</h3>
+                    <p>Every message, every touchpoint is written in your voice. Clients shouldn't be able to tell what's automated and what isn't.</p>
+                </div>
+                <div class="method-point">
+                    <h3>We measure outcomes, not features</h3>
+                    <p>Time saved per week. Fewer no-shows. Hours returned to your team. That's how we keep score.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORY -->
     <section class="story" id="story">
         <div class="reveal">
-            <div class="section-label">Our story</div>
-            <h2 class="section-title">An AI and its human,<br>building together</h2>
+            <div class="section-label">Origin</div>
+            <h2 class="section-title">The £100<br><em>challenge</em></h2>
         </div>
         <div class="story-grid">
             <div class="story-text reveal">
-                <p>Muffin & Co started as an experiment: give an AI agent £100 and a goal of £20,000. See what happens.</p>
-                <p>Turns out, when you combine enterprise-grade process automation knowledge with an AI that never sleeps, never forgets, and never stops researching — you get something genuinely useful.</p>
-                <p>We help small and medium businesses access the kind of automation that used to be reserved for companies with six-figure tech budgets. Same results. Fraction of the cost.</p>
+                <p>Muffin &amp; Co began as a deliberate constraint: start with £100 and reach £20,000 through work that is genuinely useful — nothing raised, nothing borrowed, no shortcuts.</p>
+                <p>It remains a live challenge. Every client we take on is part of that proof of concept. <strong>Not a gimmick — a discipline.</strong> It keeps the focus exactly where it should be: on delivering value that is demonstrably real.</p>
+                <p>We are a small, focused operation — deliberately so. We take on a limited number of clients at a time so each engagement gets the attention it deserves. If the work isn't right, we don't charge for it.</p>
             </div>
-            <div class="pull-quote reveal">
-                "We speak <span class="highlight">enterprise</span> but price for <span class="highlight">everyone</span>. That gap is where we live."
-            </div>
+            <aside class="story-aside reveal">
+                <div class="story-aside-label">Current status</div>
+                <p class="story-aside-text">"Building toward £20,000 — one well-automated clinic at a time."</p>
+            </aside>
         </div>
     </section>
 
+    <!-- PROCESS -->
     <section class="process" id="process">
         <div class="reveal">
             <div class="section-label">How it works</div>
-            <h2 class="section-title">Simple. Transparent.<br>No nonsense.</h2>
+            <h2 class="section-title">Simple.<br><em>Transparent.</em></h2>
         </div>
-        <div class="process-steps">
-            <div class="step reveal">
-                <h3>Audit your workflows</h3>
-                <p>We spend time understanding exactly how your business operates. Every process, every bottleneck, every "we've always done it this way" moment.</p>
+        <div class="process-grid">
+            <div class="process-step reveal">
+                <div class="step-number">01</div>
+                <h3 class="step-title">Discovery</h3>
+                <p class="step-desc">We spend an hour understanding how your business actually operates — what's manual, what's painful, what you've been meaning to sort for months.</p>
             </div>
-            <div class="step reveal">
-                <h3>Identify opportunities</h3>
-                <p>We pinpoint where AI and automation will have the biggest impact on your bottom line. No solutions looking for problems.</p>
+            <div class="process-step reveal">
+                <div class="step-number">02</div>
+                <h3 class="step-title">Design</h3>
+                <p class="step-desc">We map out a custom automation plan. You see exactly what we'll build and why, before we build it. No surprises.</p>
             </div>
-            <div class="step reveal">
-                <h3>Build & deploy</h3>
-                <p>We implement, test, and refine. You get working automation that pays for itself, with ongoing support to keep it running.</p>
+            <div class="process-step reveal">
+                <div class="step-number">03</div>
+                <h3 class="step-title">Build &amp; test</h3>
+                <p class="step-desc">We implement and test everything thoroughly. Nothing goes live until you have approved it and are comfortable with how it works.</p>
+            </div>
+            <div class="process-step reveal">
+                <div class="step-number">04</div>
+                <h3 class="step-title">Handover</h3>
+                <p class="step-desc">You own what we build. We document everything and stay available while you settle in. No lock-in, no ongoing dependency on us.</p>
             </div>
         </div>
     </section>
 
+    <!-- CONTACT -->
     <section class="contact" id="contact">
         <div class="reveal">
-            <div class="section-label">Ready?</div>
-            <h2 class="section-title">Let's automate<br>your business</h2>
-            <p class="contact-sub">Book a free 30-minute consultation. We'll audit one of your workflows live and show you what's possible.</p>
-            <a href="mailto:hello@muffinandco.xyz" class="contact-cta">
-                Get in touch <span>→</span>
-            </a>
+            <div class="section-label">Get in touch</div>
+            <h2 class="section-title">Ready to get time<br>back in your week?</h2>
+            <p class="contact-sub">Book a free 30-minute call. We'll identify one workflow we could automate for you — no commitment, no pitch deck.</p>
+            <a href="mailto:hello@muffinandco.xyz" class="contact-link">hello@muffinandco.xyz →</a>
         </div>
     </section>
 
     <footer>
-        <span>© 2026 Muffin & Co</span>
-        <a href="https://muffinandco.xyz">muffinandco.xyz</a>
+        <span class="footer-brand">Muffin &amp; Co</span>
+        <div class="footer-meta">
+            <span>© 2026 · </span>
+            <a href="https://muffinandco.xyz">muffinandco.xyz</a>
+        </div>
     </footer>
 
     <script>
-        // Intersection Observer for reveal animations
+        document.body.classList.add('has-js');
+
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
+            entries.forEach((entry, i) => {
                 if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 100);
+                    setTimeout(() => entry.target.classList.add('visible'), i * 80);
                     observer.unobserve(entry.target);
                 }
             });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
+
 </body>
 </html>
