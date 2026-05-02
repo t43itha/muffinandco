@@ -9,6 +9,8 @@
     <meta property="og:description" content="We build AI systems that handle the admin — so premium service businesses can focus on what they do best.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://muffinandco.xyz">
+    <link rel="icon" type="image/svg+xml" href="assets/muffin-and-co-icon.svg">
+    <link rel="apple-touch-icon" href="assets/muffin-and-co-icon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -65,12 +67,24 @@
         }
 
         .nav-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            color: var(--espresso);
+            text-decoration: none;
+        }
+
+        .nav-brand-mark {
+            width: 2.35rem;
+            height: 2.35rem;
+            display: block;
+        }
+
+        .nav-brand-text {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 500;
             font-size: 1.3rem;
             letter-spacing: 0.03em;
-            color: var(--espresso);
-            text-decoration: none;
         }
 
         .nav-links {
@@ -625,7 +639,10 @@
 
     <!-- NAV -->
     <nav>
-        <a href="#" class="nav-brand">Muffin &amp; Co</a>
+        <a href="#" class="nav-brand" aria-label="Muffin & Co home">
+            <img src="assets/muffin-and-co-icon.svg" alt="" class="nav-brand-mark" aria-hidden="true">
+            <span class="nav-brand-text">Muffin &amp; Co</span>
+        </a>
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#process">Process</a></li>
