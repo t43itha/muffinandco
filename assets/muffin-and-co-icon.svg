@@ -1,0 +1,9 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Muffin &amp; Co icon">
+  <path d="M9 38C9 18.8 21.7 6 40 6s31 12.8 31 32" stroke="#1C1410" stroke-width="4.4" stroke-linecap="round"/>
+  <path d="M15 38h50l-7 32H22l-7-32Z" stroke="#1C1410" stroke-width="4.4" stroke-linejoin="round"/>
+  <path d="M25 51c6-5 12-5 18 0s12 5 18 0" stroke="#B8875A" stroke-width="3.4" stroke-linecap="round"/>
+  <circle cx="24" cy="23" r="4.2" fill="#B8875A"/>
+  <circle cx="40" cy="13" r="4.2" fill="#1C1410"/>
+  <circle cx="56" cy="23" r="4.2" fill="#B8875A"/>
+  <path d="M28 22 40 14l13 8" stroke="#B8875A" stroke-width="1.6" opacity=".78"/>
+</svg>

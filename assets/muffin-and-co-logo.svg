@@ -1,0 +1,23 @@
+<svg width="360" height="96" viewBox="0 0 360 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Muffin &amp; Co logo</title>
+  <desc id="desc">A premium muffin-shaped AI node mark beside the Muffin &amp; Co wordmark.</desc>
+  <defs>
+    <style>
+      .ink{stroke:#1C1410}.copper{stroke:#B8875A}.fill-ink{fill:#1C1410}.fill-copper{fill:#B8875A}.fill-pearl{fill:#DCE9E6}
+    </style>
+  </defs>
+  <g transform="translate(10 8)">
+    <path class="ink" d="M10 40C10 18.8 26.8 2 51 2s41 16.8 41 38" stroke-width="4.8" stroke-linecap="round"/>
+    <path class="ink" d="M18 40h66l-9 39H27L18 40Z" stroke-width="4.8" stroke-linejoin="round"/>
+    <path class="copper" d="M31 56c8-7 16-7 24 0s16 7 24 0" stroke-width="3.8" stroke-linecap="round"/>
+    <circle class="fill-copper" cx="31" cy="21" r="4.6"/>
+    <circle class="fill-ink" cx="52" cy="9" r="4.6"/>
+    <circle class="fill-copper" cx="73" cy="22" r="4.6"/>
+    <path class="copper" d="M36 20 52 10l17 11" stroke-width="1.8" opacity=".78"/>
+    <circle class="fill-pearl" cx="51" cy="82" r="4" stroke="#1C1410" stroke-width="1.8"/>
+  </g>
+  <g transform="translate(128 20)" fill="#1C1410">
+    <text x="0" y="38" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="500" letter-spacing="-0.02em">Muffin &amp; Co</text>
+    <text x="2" y="66" font-family="DM Sans, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="0.22em" fill="#B8875A">AI AUTOMATION</text>
+  </g>
+</svg>
