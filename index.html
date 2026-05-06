@@ -302,6 +302,76 @@
             text-wrap: pretty;
         }
 
+        /* ─── OFFER ─── */
+
+        .offer {
+            background: var(--warm-white);
+        }
+
+        .offer-wrap {
+            display: grid;
+            grid-template-columns: 4fr 5fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .offer-copy {
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.85;
+            color: var(--text-body);
+            margin-top: 1.5rem;
+            text-wrap: pretty;
+        }
+
+        .offer-stack {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .offer-card {
+            padding: 2rem;
+            border: 1px solid var(--border);
+            background: var(--ivory);
+        }
+
+        .offer-card.primary {
+            background: var(--espresso);
+            color: var(--ivory);
+            border-color: var(--espresso);
+        }
+
+        .offer-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+        }
+
+        .offer-card p {
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.75;
+            color: var(--text-muted);
+        }
+
+        .offer-card.primary p {
+            color: rgba(250, 247, 242, 0.74);
+        }
+
+        .offer-price {
+            display: block;
+            margin-top: 1.2rem;
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--copper);
+        }
+
+        .offer-card.primary .offer-price {
+            color: var(--copper-light);
+        }
+
         /* ─── METHOD ─── */
 
         .method {
@@ -602,6 +672,8 @@
             .services-header { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
             .services-grid { grid-template-columns: 1fr 1fr; }
 
+            .offer-wrap { grid-template-columns: 1fr; gap: 3rem; }
+
             .method-grid { grid-template-columns: 1fr; gap: 4rem; }
 
             .story-grid { grid-template-columns: 1fr; gap: 3.5rem; }
@@ -645,9 +717,10 @@
         </a>
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
+            <li><a href="#offer">Offer</a></li>
             <li><a href="#process">Process</a></li>
             <li><a href="#story">About</a></li>
-            <li><a href="mailto:hello@muffinandco.xyz" class="nav-contact">hello@muffinandco.xyz</a></li>
+            <li><a href="mailto:hello@muffinandco.xyz?subject=AI%20admin%20sprint%20enquiry" class="nav-contact">hello@muffinandco.xyz</a></li>
         </ul>
     </nav>
 
@@ -687,6 +760,34 @@
             <div class="service-card reveal">
                 <h3 class="service-name">Custom AI<br>Solutions</h3>
                 <p class="service-desc">Bespoke tools built around your specific practice — from consultation prep to aftercare to client communication — built to your voice and standards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFFER -->
+    <section class="offer" id="offer">
+        <div class="offer-wrap reveal">
+            <div>
+                <div class="section-label">Fast-start offer</div>
+                <h2 class="section-title">A paid audit that<br><em>becomes the build.</em></h2>
+                <p class="offer-copy">For clinics that already have demand but still lose hours to reminders, forms, reviews, follow-ups, missed calls, and manual handovers. We start small, prove value quickly, then only build the parts worth keeping.</p>
+            </div>
+            <div class="offer-stack">
+                <article class="offer-card primary">
+                    <h3>72-hour AI Admin Audit</h3>
+                    <p>We review one client journey, identify the highest-friction workflow, and deliver a simple automation map with the messages, triggers, tools, and expected time saved.</p>
+                    <span class="offer-price">£500 · credited against implementation</span>
+                </article>
+                <article class="offer-card">
+                    <h3>Implementation Sprint</h3>
+                    <p>We build the approved workflow: forms, automations, message copy, review requests, reminders, handover notes, and documentation — tested before it goes live.</p>
+                    <span class="offer-price">from £2,500 · fixed scope</span>
+                </article>
+                <article class="offer-card">
+                    <h3>Proof target</h3>
+                    <p>Eight focused implementation sprints at £2,500 reaches the full £20,000 challenge target. The work stays intentionally narrow so each clinic gets a useful system fast.</p>
+                    <span class="offer-price">limited availability while we build the case studies</span>
+                </article>
             </div>
         </div>
     </section>
@@ -772,8 +873,8 @@
         <div class="reveal">
             <div class="section-label">Get in touch</div>
             <h2 class="section-title">Ready to get time<br>back in your week?</h2>
-            <p class="contact-sub">Book a free 30-minute call. We'll identify one workflow we could automate for you — no commitment, no pitch deck.</p>
-            <a href="mailto:hello@muffinandco.xyz" class="contact-link">hello@muffinandco.xyz →</a>
+            <p class="contact-sub">Book a free 30-minute call, or ask for the £500 72-hour AI Admin Audit. We'll identify one workflow worth automating first — no pitch deck, no vague transformation programme.</p>
+            <a href="mailto:hello@muffinandco.xyz?subject=AI%20admin%20sprint%20enquiry" class="contact-link">hello@muffinandco.xyz →</a>
         </div>
     </section>
 
