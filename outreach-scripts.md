@@ -30,6 +30,7 @@ Would it be useful if I sent over 2–3 workflow ideas I’d look at first for {
 Warmly,
 Tabby
 Muffin & Co
++44 20 4634 9555
 https://muffinandco.xyz
 hello@muffinandco.xyz
 
@@ -50,6 +51,7 @@ Who’s the best person to send that to?
 Warmly,
 Tabby
 Muffin & Co
++44 20 4634 9555
 https://muffinandco.xyz
 
 ## Phone opener

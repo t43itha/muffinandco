@@ -7,7 +7,7 @@ Date created: 2026-06-06 01:31 BST
 - Domain: `muffinandco.xyz`
 - Website/repo: `/Users/tabithao/muffinandco`
 - Brand assets: logo + icon in `/assets`
-- Phone number: purchased, but the number is not present in repo/session context yet. The funnel is built so the call CTA can be switched on as soon as the number is added.
+- Phone number: +44 20 4634 9555. The funnel uses this as the live call CTA for reviews and outbound follow-up.
 - Starting goal: £100 → £20,000.
 
 ## Revenue model
