@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muffin & Co — Clinic Leakage Review</title>
+  <meta name="description" content="Muffin & Co helps aesthetic clinics recover lost treatment enquiries from missed calls, WhatsApp, Instagram DMs, website forms and booking links." />
+  <meta property="og:title" content="Muffin & Co — Stop losing aesthetic clinic enquiries" />
+  <meta property="og:description" content="Book a free 15-minute Clinic Leakage Review. We map where enquiries leak across phone, WhatsApp, Instagram, forms and booking links." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://muffinandco.xyz" />
+  <link rel="icon" type="image/svg+xml" href="assets/muffin-and-co-icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ivory: #FAF7F2;
+      --paper: #FFFDF9;
+      --mist: #DCE9E6;
+      --espresso: #1C1410;
+      --cocoa: #4A3728;
+      --copper: #B8875A;
+      --copper-light: #D4A878;
+      --muted: #7A6558;
+      --hairline: rgba(184, 135, 90, 0.22);
+      --softline: rgba(28, 20, 16, 0.08);
+      --shadow: 0 28px 90px rgba(74, 55, 40, 0.12);
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(220, 233, 230, 0.62), transparent 34rem),
+        linear-gradient(180deg, var(--ivory) 0%, #F6EFE6 100%);
+      color: var(--espresso);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.28;
+      background-image: linear-gradient(rgba(28,20,16,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(28,20,16,.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(180deg, #000 0%, transparent 78%);
+    }
+    a { color: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    .notice {
+      background: var(--espresso);
+      color: #F7EFE4;
+      text-align: center;
+      padding: 10px 18px;
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .notice strong { color: var(--copper-light); font-weight: 600; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(250, 247, 242, 0.9);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--hairline);
+    }
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand img { width: 168px; height: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 12px; letter-spacing: .11em; text-transform: uppercase; color: #5F4A3D; }
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover { color: var(--espresso); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 1px solid var(--espresso);
+      background: var(--espresso);
+      color: #FFF7EC;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: .04em;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      box-shadow: 0 16px 36px rgba(28,20,16,.16);
+    }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 22px 44px rgba(28,20,16,.2); }
+    .button.secondary { background: transparent; color: var(--espresso); box-shadow: none; border-color: var(--hairline); }
+    .button.secondary:hover { border-color: var(--espresso); }
+
+    .hero { padding: 86px 0 58px; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 58px; align-items: center; }
+    .eyebrow { color: #8F623C; text-transform: uppercase; letter-spacing: .16em; font-size: 13px; font-weight: 700; margin-bottom: 18px; }
+    h1, h2, h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; line-height: .96; letter-spacing: -0.035em; margin: 0; text-wrap: pretty; }
+    h1 { font-size: clamp(58px, 7.2vw, 104px); max-width: 830px; }
+    .hero-copy { margin: 26px 0 0; max-width: 620px; color: var(--cocoa); font-size: clamp(18px, 2vw, 22px); line-height: 1.55; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+    .micro { margin-top: 18px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+
+    .diagnostic-card {
+      position: relative;
+      background: rgba(255, 253, 249, .82);
+      border: 1px solid var(--hairline);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .diagnostic-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(184,135,90,.18), transparent 20rem);
+      pointer-events: none;
+    }
+    .card-top { position: relative; display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 24px; }
+    .card-title { font-family: "Cormorant Garamond", Georgia, serif; font-size: 32px; line-height: 1; letter-spacing: -.02em; }
+    .score { width: 96px; height: 96px; border-radius: 50%; border: 1px solid var(--hairline); display: grid; place-items: center; background: var(--ivory); }
+    .score span { display: block; font-family: "Cormorant Garamond"; font-size: 44px; line-height: .8; }
+    .score small { display: block; color: var(--muted); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; text-align: center; margin-top: 8px; }
+    .leak-list { position: relative; display: grid; gap: 12px; }
+    .leak { display: grid; grid-template-columns: 26px 1fr auto; gap: 12px; align-items: center; padding: 14px; border: 1px solid var(--softline); border-radius: 18px; background: rgba(250,247,242,.72); }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--copper); box-shadow: 0 0 0 6px rgba(184,135,90,.12); margin-left: 4px; }
+    .leak strong { font-size: 14px; }
+    .leak p { margin: 3px 0 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .tag { color: var(--copper); font-size: 11px; text-transform: uppercase; letter-spacing: .11em; }
+
+    .section { padding: 78px 0; }
+    .section-head { display: grid; grid-template-columns: .8fr 1fr; gap: 48px; align-items: end; margin-bottom: 36px; }
+    h2 { font-size: clamp(44px, 5.4vw, 74px); }
+    .section-head p { color: var(--cocoa); line-height: 1.7; font-size: 17px; margin: 0; max-width: 580px; }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .panel { background: rgba(255,253,249,.72); border: 1px solid var(--hairline); border-radius: 24px; padding: 24px; }
+    .panel .num { color: var(--copper); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 42px; display: block; }
+    .panel h3 { font-size: 31px; letter-spacing: -.025em; line-height: 1; margin-bottom: 12px; }
+    .panel p { color: var(--muted); line-height: 1.62; margin: 0; font-size: 14px; }
+
+    .ledger { background: var(--paper); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+    .workflow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border: 1px solid var(--hairline); border-radius: 28px; overflow: hidden; background: var(--paper); }
+    .step { min-height: 210px; padding: 22px; border-right: 1px solid var(--hairline); display: flex; flex-direction: column; justify-content: space-between; }
+    .step:last-child { border-right: 0; }
+    .step small { color: var(--copper); letter-spacing: .14em; text-transform: uppercase; font-size: 11px; }
+    .step strong { display: block; font-family: "Cormorant Garamond"; font-size: 30px; line-height: 1; letter-spacing: -.02em; }
+    .step p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+
+    .offer { display: grid; grid-template-columns: .95fr 1.05fr; gap: 24px; align-items: stretch; }
+    .price-card { background: var(--espresso); color: #FFF7EC; border-radius: 32px; padding: 34px; display: flex; flex-direction: column; justify-content: space-between; min-height: 440px; }
+    .price-card h2 { color: #FFF7EC; }
+    .price { font-family: "Cormorant Garamond"; font-size: 82px; line-height: .9; letter-spacing: -.04em; margin: 26px 0 8px; }
+    .price-card p { color: rgba(255,247,236,.72); line-height: 1.65; }
+    .includes { background: rgba(255,253,249,.72); border: 1px solid var(--hairline); border-radius: 32px; padding: 34px; }
+    .includes ul { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 12px; }
+    .includes li { padding: 14px 0; border-bottom: 1px solid var(--softline); display: flex; gap: 14px; color: var(--cocoa); line-height: 1.5; }
+    .includes li::before { content: "—"; color: var(--copper); }
+
+    .form-wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 26px; align-items: start; }
+    form { background: var(--paper); border: 1px solid var(--hairline); border-radius: 32px; padding: 28px; box-shadow: var(--shadow); }
+    label { display: block; color: var(--muted); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 8px; }
+    input, select, textarea { width: 100%; border: 1px solid var(--hairline); background: var(--ivory); color: var(--espresso); border-radius: 14px; padding: 14px 14px; font: inherit; outline: none; }
+    textarea { min-height: 116px; resize: vertical; }
+    .field { margin-bottom: 16px; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-note { color: var(--muted); font-size: 13px; line-height: 1.65; margin-top: 14px; }
+
+    footer { padding: 42px 0; border-top: 1px solid var(--hairline); color: var(--muted); }
+    .footer-grid { display: flex; justify-content: space-between; gap: 24px; align-items: center; }
+    .footer-grid img { width: 136px; opacity: .84; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hero { padding-top: 54px; }
+      .hero-grid, .section-head, .offer, .form-wrap { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .workflow { grid-template-columns: 1fr; }
+      .step { border-right: 0; border-bottom: 1px solid var(--hairline); min-height: 170px; }
+      .step:last-child { border-bottom: 0; }
+      .two { grid-template-columns: 1fr; }
+      .footer-grid { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="notice">The £100 → £20,000 challenge · <strong>Clinic leakage reviews now open</strong></div>
+
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Muffin & Co home">
+        <img src="assets/muffin-and-co-logo.svg" alt="Muffin & Co" />
+      </a>
+      <div class="nav-links" aria-label="Primary navigation">
+        <a href="#leaks">Leakage points</a>
+        <a href="#audit">The audit</a>
+        <a href="#plan">Plan</a>
+        <a href="#book">Book review</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">For aesthetic clinics</div>
+          <h1>Stop losing treatment enquiries to slow follow-up.</h1>
+          <p class="hero-copy">Muffin & Co maps where your clinic leaks enquiries across phone calls, WhatsApp, Instagram DMs, website forms and booking links — then builds the first automation to recover them.</p>
+          <div class="hero-actions">
+            <a class="button" href="#book">Book a free 15-minute review</a>
+            <a class="button secondary" href="tel:+442046349555">Call +44 20 4634 9555</a>
+            <a class="button secondary" href="mailto:hello@muffinandco.xyz?subject=Clinic%20Leakage%20Review">Email Muffin & Co</a>
+          </div>
+          <p class="micro">Premium client experience first. AI stays behind the scenes. The aim is fewer missed bookings, not a robotic clinic.</p>
+        </div>
+
+        <aside class="diagnostic-card" aria-label="Example clinic leakage scorecard">
+          <div class="card-top">
+            <div>
+              <div class="eyebrow">Sample scorecard</div>
+              <div class="card-title">Where enquiries quietly disappear</div>
+            </div>
+            <div class="score"><div><span>7</span><small>checks</small></div></div>
+          </div>
+          <div class="leak-list">
+            <div class="leak"><div class="dot"></div><div><strong>Missed calls</strong><p>Client rings between appointments. No immediate recovery path.</p></div><div class="tag">High</div></div>
+            <div class="leak"><div class="dot"></div><div><strong>WhatsApp delay</strong><p>Interested client waits hours; consult intent goes cold.</p></div><div class="tag">Medium</div></div>
+            <div class="leak"><div class="dot"></div><div><strong>Form limbo</strong><p>Website forms collect leads but do not push to booked consultation.</p></div><div class="tag">High</div></div>
+            <div class="leak"><div class="dot"></div><div><strong>No-show drift</strong><p>Manual reminders and reschedule nudges depend on staff bandwidth.</p></div><div class="tag">Medium</div></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="leaks">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Most clinics do not have an AI problem. They have a handoff problem.</h2>
+          <p>The client journey is split between people, platforms and inboxes. Booking systems help, but they rarely fix the moments between enquiry, consultation, treatment, aftercare and review.</p>
+        </div>
+        <div class="grid-3">
+          <article class="panel"><span class="num">Leak 01</span><h3>Phone to nothing</h3><p>A treatment enquiry arrives while the team is with clients. If there is no fast callback sequence, the client books elsewhere.</p></article>
+          <article class="panel"><span class="num">Leak 02</span><h3>DM to admin queue</h3><p>Instagram and WhatsApp feel personal, but they become messy when nobody owns qualification, routing and follow-up timing.</p></article>
+          <article class="panel"><span class="num">Leak 03</span><h3>Booked but fragile</h3><p>Forms, reminders, deposits, pre-care, aftercare and reviews often rely on manual chasing. That creates avoidable no-shows and weak rebooking.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ledger" id="audit">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>The Clinic Leakage Review</h2>
+          <p>A practical front-door offer. In 15 minutes we identify the highest-value workflow to inspect. If there is a fit, the 72-hour audit turns it into a build-ready automation plan.</p>
+        </div>
+        <div class="workflow" aria-label="Clinic leakage review workflow">
+          <div class="step"><small>01</small><strong>Inspect</strong><p>Website, contact route, booking path, WhatsApp, Instagram and phone signals.</p></div>
+          <div class="step"><small>02</small><strong>Map</strong><p>First enquiry to booked consultation, then consultation to treatment and review.</p></div>
+          <div class="step"><small>03</small><strong>Score</strong><p>Rank leakage by revenue risk, staff pressure and client experience risk.</p></div>
+          <div class="step"><small>04</small><strong>Design</strong><p>Specify the first workflow: callback, triage, reminders, aftercare or reactivation.</p></div>
+          <div class="step"><small>05</small><strong>Build</strong><p>Run a fixed-scope implementation sprint from £2,500 if the ROI is clear.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="plan">
+      <div class="wrap offer">
+        <div class="price-card">
+          <div>
+            <div class="eyebrow">Paid diagnostic</div>
+            <h2>72-hour audit</h2>
+            <div class="price">£500</div>
+            <p>Credited against implementation if your clinic chooses to build the recommended workflow.</p>
+          </div>
+          <a class="button" href="#book" style="background:#FFF7EC;color:#1C1410;border-color:#FFF7EC;box-shadow:none">Start with the free review</a>
+        </div>
+        <div class="includes">
+          <div class="eyebrow">What you receive</div>
+          <h2>Clear enough to build. Small enough to act.</h2>
+          <ul>
+            <li>One clinic enquiry journey map from first contact to booked consultation.</li>
+            <li>A leakage scorecard across phone, WhatsApp, Instagram, website forms and booking links.</li>
+            <li>Three high-friction moments ranked by likely revenue/admin impact.</li>
+            <li>A first-workflow automation blueprint with triggers, messages, routing and owner.</li>
+            <li>A fixed-scope implementation proposal from £2,500 if there is a strong business case.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ledger" id="book">
+      <div class="wrap form-wrap">
+        <div>
+          <div class="eyebrow">Book the free review</div>
+          <h2>Let’s find the first leak worth fixing.</h2>
+          <p class="hero-copy" style="font-size:18px">Send your clinic details. We will reply with either a review slot or one specific observation about your enquiry flow.</p>
+          <p class="micro">Prefer email? Use <a href="mailto:hello@muffinandco.xyz">hello@muffinandco.xyz</a>. Prefer to call? <a href="tel:+442046349555">+44 20 4634 9555</a>.</p>
+        </div>
+        <form action="mailto:hello@muffinandco.xyz" method="post" enctype="text/plain">
+          <div class="two">
+            <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required /></div>
+            <div class="field"><label for="clinic">Clinic</label><input id="clinic" name="clinic" autocomplete="organization" required /></div>
+          </div>
+          <div class="two">
+            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
+            <div class="field"><label for="website">Website</label><input id="website" name="website" type="url" placeholder="https://" /></div>
+          </div>
+          <div class="field">
+            <label for="channel">Biggest enquiry channel</label>
+            <select id="channel" name="biggest_enquiry_channel">
+              <option>Phone calls</option>
+              <option>WhatsApp</option>
+              <option>Instagram DMs</option>
+              <option>Website forms</option>
+              <option>Online booking link</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field"><label for="message">Where do enquiries get messy?</label><textarea id="message" name="message" placeholder="Example: clients message on Instagram but booking happens by phone; forms are manual; no-shows take staff time..."></textarea></div>
+          <div class="hero-actions" style="margin-top:0"><button class="button" type="submit">Request review</button><a class="button secondary" href="tel:+442046349555">Call +44 20 4634 9555</a></div>
+          <p class="form-note">This opens your email app so you can send the request directly. No spam, no automated list signup.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <img src="assets/muffin-and-co-logo.svg" alt="Muffin & Co" />
+      <div>muffinandco.xyz · hello@muffinandco.xyz · <a href="tel:+442046349555">+44 20 4634 9555</a> · AI automation for premium clinics</div>
+    </div>
+  </footer>
+</body>
+</html>
